@@ -1,5 +1,20 @@
-div {
+/*  Webcams */
+div#webcams {
+  height: 300px;
+  width: 700px;
+}
+div.webcam {
   height: 240px;
   width: 320px;
   border: 6px solid #999;
 }
+div#webcam0 { float: left; }
+div#webcam1 { float: right; }
+
+/*  Controls */
+div#controls {
+  height: 300px;
+  width: 700px;
+}
+div#movement-control { float: left; }
+div#action-control { float: right; }
