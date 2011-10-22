@@ -1,1 +1,1 @@
-bundle exec ruby www/control.rb
+rvm exec bundle exec ruby www/control.rb
