@@ -1,7 +1,7 @@
 class Tank
 
   P_ADDR=0x378
-  P_FILE="/tmp/port"
+  P_FILE="/dev/port"
   DEFAULT_TIME=2
 
   def initialize()
@@ -137,6 +137,7 @@ class Tank
     right
     forward
     left
+    reverse
   end
 
 

@@ -20,7 +20,7 @@ mjpg_streamer -i "input_file.so -f img/cam0 -r" -o "output_http.so -w www -p 808
 mjpg_streamer -i "input_file.so -f img/cam1 -r" -o "output_http.so -w www -p 8081" &
 
 # Start Sinatra!
-#rvm exec bundle exec ruby www/control.rb &
+rvm exec bundle exec ruby www/control.rb &
 
 # Create the files from alternating snapshots from the webcams
 x=0

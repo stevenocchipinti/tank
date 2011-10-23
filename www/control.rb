@@ -7,7 +7,7 @@ require_relative 'Tank'
 # Configuration
 # ==============================================================================
 configure do
-  set :port, 8080
+  set :port, 80
 end
 
 
