@@ -15,30 +15,39 @@ class Tank
   # ============================================================================
 
   def forward(time=DEFAULT_TIME)
+    print "Moving forward... "
     write(0b10100000)
     sleep(time)
+    puts "done!"
     stop
   end
 
   def reverse(time=DEFAULT_TIME)
+    print "Moving backwards... "
     write(0b11110000)
     sleep(time)
+    puts "done!"
     stop
   end
 
   def left(time=DEFAULT_TIME)
+    print "Turning left... "
     write(0b11100000)
     sleep(time)
+    puts "done!"
     stop
   end
 
   def right(time=DEFAULT_TIME)
+    print "Turning right... "
     write(0b10110000)
     sleep(time)
+    puts "done!"
     stop
   end
 
   def stop
+    puts "Stop!"
     write(0b00000000)
   end
 
@@ -47,34 +56,44 @@ class Tank
   # ============================================================================
 
   def clockwise(time=DEFAULT_TIME)
+    print "Rotating clockwise... "
     write(0b00001000)
     sleep(time)
+    puts "done!"
     stop
   end
 
   def anticlockwise(time=DEFAULT_TIME)
+    print "Rotating anticlockwise... "
     write(0b00001100)
     sleep(time)
+    puts "done!"
     stop
   end
 
   def up(time=DEFAULT_TIME)
+    print "Raising cannon... "
     write(0b00000010)
     sleep(time)
+    puts "done!"
     stop
   end
 
   def down(time=DEFAULT_TIME)
+    print "Lowering cannon... "
     write(0b00000011)
     sleep(time)
+    puts "done!"
     stop
   end
 
   # TODO: Not enough pins to implement this, so just fake some recoil! (lol)
   def fire
+    print "FIRE!"
     write(0b11110000)
-    sleep(0.5)
+    sleep(0.2)
     write(0b10100000)
+    sleep(0.2)
     stop
   end
 
