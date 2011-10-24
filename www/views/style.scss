@@ -1,20 +1,19 @@
-/*  Webcams */
-div#webcams {
-  height: 300px;
-  width: 700px;
+h1 {
+  margin: 15px 25px;
+  font-family: Sans;
 }
 div.webcam {
   height: 240px;
   width: 320px;
-  border: 6px solid #999;
+  padding: 59px;
+  border: 1px solid #000;
 }
-div#webcam0 { float: left; }
-div#webcam1 { float: right; }
-
-/*  Controls */
-div#controls {
-  height: 300px;
-  width: 700px;
+fieldset {
+  width: 418px;
+  margin: 0px;
+  border: 1px solid #000;
+  padding: 10px;
+  label {
+    padding: 10px;
+  }
 }
-div#movement-control { float: left; }
-div#action-control { float: right; }
