@@ -24,7 +24,7 @@
             %area.action{:shape => "rect", :coords => "140,300,300,440", :nohref => "nohref", :alt => "Reverse", :title => "reverse"}
             %area.action{:shape => "rect", :coords => "0,140,140,300", :nohref => "nohref", :alt => "Left", :title => "left"}
             %area.action{:shape => "rect", :coords => "140,140,300,300", :nohref => "nohref", :alt => "Fire!", :title => "fire"}
-            %area.action{:shape => "rect", :coords => "0,0,140,140", :nohref => "nohref", :alt => "Anti-Clockwise", :title => "anti-clockwise"}
+            %area.action{:shape => "rect", :coords => "0,0,140,140", :nohref => "nohref", :alt => "Anti-Clockwise", :title => "anticlockwise"}
             %area.action{:shape => "rect", :coords => "300,0,440,140", :nohref => "nohref", :alt => "Clockwise", :title => "clockwise"}
             %area.action{:shape => "rect", :coords => "0,300,140,440", :nohref => "nohref", :alt => "Up", :title => "up"}
             %area.action{:shape => "rect", :coords => "300,300,440,440", :nohref => "nohref", :alt => "Down", :title => "down"}
@@ -33,10 +33,10 @@
           %fieldset
             %label{:for => "sticky"}
               Sticky:
-              %input{:name => "sticky", :id => "sticky", :type => "checkbox", :checked => "checked"}
+              = checkbox_tag(params.has_key?('sticky'), {:name => "sticky", :id => "sticky", :type => "checkbox"})
             %label{:for => "time"}
               Time:
-              %input{:name => "time"}
+              %input{:name => "time", :value => "#{params["time"]}"}
 
     %script{:type => "text/javascript", :src => "js/jquery.min.js"}
     %script{:type => "text/javascript", :src => "js/tank.js"}

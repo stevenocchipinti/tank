@@ -20,7 +20,7 @@ get '/' do
   # Check to see if the actions should be persistent
   time = nil
   unless params.has_key?("sticky")
-    time = params.has_key?("time") ? params["time"] : 2
+    time = params.has_key?("time") ? params["time"].to_i : 2
   end
 
   # Control the tank!
@@ -68,4 +68,15 @@ end
 # ==============================================================================
 get '/css/style.css' do
   scss :style
+end
+
+
+# ==============================================================================
+# Helpers
+# ==============================================================================
+helpers do
+  def checkbox_tag(checked, options={})
+    options['checked'] = 'checked' if checked
+    haml "%input#{options.to_s}"
+  end
 end
