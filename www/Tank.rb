@@ -2,7 +2,6 @@ class Tank
 
   P_ADDR=0x378
   P_FILE="/dev/port"
-  DEFAULT_TIME=nil
 
   def initialize()
     # Open the parallel port
@@ -14,41 +13,41 @@ class Tank
   # Movement methods
   # ============================================================================
 
-  def forward(time=DEFAULT_TIME)
+  def forward(duration=nil)
     print "Moving forward... "
     write(0b10100000)
-    if time
-      sleep(time)
+    if duration && duration > 0
+      sleep(duration)
       stop
     end
     puts "done!"
   end
 
-  def reverse(time=DEFAULT_TIME)
+  def reverse(duration=nil)
     print "Moving backwards... "
     write(0b11110000)
-    if time
-      sleep(time)
+    if duration && duration > 0
+      sleep(duration)
       stop
     end
     puts "done!"
   end
 
-  def left(time=DEFAULT_TIME)
+  def left(duration=nil)
     print "Turning left... "
     write(0b11100000)
-    if time
-      sleep(time)
+    if duration && duration > 0
+      sleep(duration)
       stop
     end
     puts "done!"
   end
 
-  def right(time=DEFAULT_TIME)
+  def right(duration=nil)
     print "Turning right... "
     write(0b10110000)
-    if time
-      sleep(time)
+    if duration && duration > 0
+      sleep(duration)
       stop
     end
     puts "done!"
@@ -63,41 +62,41 @@ class Tank
   # Turret methods
   # ============================================================================
 
-  def clockwise(time=DEFAULT_TIME)
+  def clockwise(duration=nil)
     print "Rotating clockwise... "
     write(0b00001000)
-    if time
-      sleep(time)
+    if duration && duration > 0
+      sleep(duration)
       stop
     end
     puts "done!"
   end
 
-  def anticlockwise(time=DEFAULT_TIME)
+  def anticlockwise(duration=nil)
     print "Rotating anticlockwise... "
     write(0b00001100)
-    if time
-      sleep(time)
+    if duration && duration > 0
+      sleep(duration)
       stop
     end
     puts "done!"
   end
 
-  def up(time=DEFAULT_TIME)
+  def up(duration=nil)
     print "Raising cannon... "
     write(0b00000010)
-    if time
-      sleep(time)
+    if duration && duration > 0
+      sleep(duration)
       stop
     end
     puts "done!"
   end
 
-  def down(time=DEFAULT_TIME)
+  def down(duration=nil)
     print "Lowering cannon... "
     write(0b00000011)
-    if time
-      sleep(time)
+    if duration && duration > 0
+      sleep(duration)
       stop
     end
     puts "done!"

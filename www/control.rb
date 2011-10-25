@@ -17,34 +17,28 @@ end
 # ==============================================================================
 get '/' do
 
-  # Check to see if the actions should be persistent
-  time = nil
-  unless params.has_key?("sticky")
-    time = params.has_key?("time") ? params["time"].to_i : 2
-  end
-
   # Control the tank!
   t = Tank.new
   if params.has_key?("action")
     case params["action"]
     when "forward"
-      t.forward(time)
+      t.forward(params['duration'].to_i)
     when "reverse"
-      t.reverse(time)
+      t.reverse(params['duration'].to_i)
     when "left"
-      t.left(time)
+      t.left(params['duration'].to_i)
     when "right"
-      t.right(time)
+      t.right(params['duration'].to_i)
     when "stop"
       t.stop
     when "clockwise"
-      t.clockwise(time)
+      t.clockwise(params['duration'].to_i)
     when "anticlockwise"
-      t.anticlockwise(time)
+      t.anticlockwise(params['duration'].to_i)
     when "up"
-      t.up(time)
+      t.up(params['duration'].to_i)
     when "down"
-      t.down(time)
+      t.down(params['duration'].to_i)
     when "fire"
       t.fire
     end

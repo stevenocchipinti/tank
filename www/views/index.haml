@@ -31,12 +31,9 @@
             %area.action{:shape => "rect", :coords => "0,440,440,590", :nohref => "nohref", :alt => "Stop", :title => "stop"}
 
           %fieldset
-            %label{:for => "sticky"}
-              Sticky:
-              = checkbox_tag(params.has_key?('sticky'), {:name => "sticky", :id => "sticky", :type => "checkbox"})
-            %label{:for => "time"}
-              Time:
-              %input{:name => "time", :value => "#{params["time"]}"}
+            %label{:for => "duration"}
+              Duration:
+              %input{:name => "duration", :value => "#{params["duration"]}"}
 
     %script{:type => "text/javascript", :src => "js/jquery.min.js"}
     %script{:type => "text/javascript", :src => "js/tank.js"}
