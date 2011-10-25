@@ -1,3 +1,6 @@
+/* FIXME: Really inefficient for 2 webcams, needs a refactor!
+          Maybe convert to coffeescript while I'm at it? */
+
 /* Copyright (C) 2007 Richard Atterer, richard©atterer.net
    This program is free software; you can redistribute it and/or modify it
    under the terms of the GNU General Public License, version 2. See the file

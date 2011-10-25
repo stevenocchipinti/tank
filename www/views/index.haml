@@ -3,7 +3,7 @@
 
   %head
     %title Tank Mission Control
-    %link{:href => "stylesheets/style.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "css/style.css", :rel => "stylesheet", :type => "text/css"}
 
   %body
 
@@ -14,20 +14,21 @@
         %img{:src => "/?action=snapshot"}
 
     #controls
-      %form
+      %form#actionform{:method => "get", :name => "actionform"}
         #controller
+          %input#action{:type => "hidden", :name => "action"}
           %img{:src => "img/controller.jpg", :alt => "controller", :usemap => "#controllermap"}
           %map{:name => "controllermap"}
-            %area{:shape => "rect", :coords => "140,0,300,140", :href => "?forward", :alt => "Forward"}
-            %area{:shape => "rect", :coords => "300,140,440,300", :href => "?right", :alt => "Right"}
-            %area{:shape => "rect", :coords => "140,300,300,440", :href => "?reverse", :alt => "Reverse"}
-            %area{:shape => "rect", :coords => "0,140,140,300", :href => "?left", :alt => "Left"}
-            %area{:shape => "rect", :coords => "140,140,300,300", :href => "?fire", :alt => "Fire!"}
-            %area{:shape => "rect", :coords => "0,0,140,140", :href => "?anticlockwise", :alt => "Anti-Clockwise"}
-            %area{:shape => "rect", :coords => "300,0,440,140", :href => "?clockwise", :alt => "Clockwise"}
-            %area{:shape => "rect", :coords => "0,300,140,440", :href => "?up", :alt => "Up"}
-            %area{:shape => "rect", :coords => "300,300,440,440", :href => "?down", :alt => "Down"}
-            %area{:shape => "rect", :coords => "0,440,440,590", :href => "?stop", :alt => "Stop"}
+            %area.action{:shape => "rect", :coords => "140,0,300,140", :nohref => "nohref", :alt => "Forward", :title => "forward"}
+            %area.action{:shape => "rect", :coords => "300,140,440,300", :nohref => "nohref", :alt => "Right", :title => "right"}
+            %area.action{:shape => "rect", :coords => "140,300,300,440", :nohref => "nohref", :alt => "Reverse", :title => "reverse"}
+            %area.action{:shape => "rect", :coords => "0,140,140,300", :nohref => "nohref", :alt => "Left", :title => "left"}
+            %area.action{:shape => "rect", :coords => "140,140,300,300", :nohref => "nohref", :alt => "Fire!", :title => "fire"}
+            %area.action{:shape => "rect", :coords => "0,0,140,140", :nohref => "nohref", :alt => "Anti-Clockwise", :title => "anti-clockwise"}
+            %area.action{:shape => "rect", :coords => "300,0,440,140", :nohref => "nohref", :alt => "Clockwise", :title => "clockwise"}
+            %area.action{:shape => "rect", :coords => "0,300,140,440", :nohref => "nohref", :alt => "Up", :title => "up"}
+            %area.action{:shape => "rect", :coords => "300,300,440,440", :nohref => "nohref", :alt => "Down", :title => "down"}
+            %area.action{:shape => "rect", :coords => "0,440,440,590", :nohref => "nohref", :alt => "Stop", :title => "stop"}
 
           %fieldset
             %label{:for => "sticky"}
@@ -37,4 +38,6 @@
               Time:
               %input{:name => "time"}
 
+    %script{:type => "text/javascript", :src => "js/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "js/tank.js"}
     %script{:type => "text/javascript", :src => "js/webcams.js"}

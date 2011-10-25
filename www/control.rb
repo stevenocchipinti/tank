@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'haml'
 require 'sass'
+require 'coffee-script'
 require_relative 'Tank'
 
 # ==============================================================================
@@ -24,26 +25,29 @@ get '/' do
 
   # Control the tank!
   t = Tank.new
-  if params.has_key?("forward")
-    t.forward(time)
-  elsif params.has_key?("reverse")
-    t.reverse(time)
-  elsif params.has_key?("left")
-    t.left(time)
-  elsif params.has_key?("right")
-    t.right(time)
-  elsif params.has_key?("stop")
-    t.stop
-  elsif params.has_key?("clockwise")
-    t.clockwise(time)
-  elsif params.has_key?("anticlockwise")
-    t.anticlockwise(time)
-  elsif params.has_key?("up")
-    t.up(time)
-  elsif params.has_key?("down")
-    t.down(time)
-  elsif params.has_key?("fire")
-    t.fire
+  if params.has_key?("action")
+    case params["action"]
+    when "forward"
+      t.forward(time)
+    when "reverse"
+      t.reverse(time)
+    when "left"
+      t.left(time)
+    when "right"
+      t.right(time)
+    when "stop"
+      t.stop
+    when "clockwise"
+      t.clockwise(time)
+    when "anticlockwise"
+      t.anticlockwise(time)
+    when "up"
+      t.up(time)
+    when "down"
+      t.down(time)
+    when "fire"
+      t.fire
+    end
   end
 
   # Render a view
@@ -52,8 +56,16 @@ end
 
 
 # ==============================================================================
+# Javascripts / Coffeescripts
+# ==============================================================================
+get '/js/tank.js' do
+  coffee :tank
+end
+
+
+# ==============================================================================
 # Stylesheets
 # ==============================================================================
-get '/stylesheets/style.css' do
+get '/css/style.css' do
   scss :style
 end
