@@ -16,8 +16,10 @@ end
 # Actions
 # ==============================================================================
 get '/' do
+  haml :index
+end
 
-  # Control the tank!
+post '/' do
   t = Tank.new
   if params.has_key?("action")
     case params["action"]
@@ -43,9 +45,6 @@ get '/' do
       t.fire
     end
   end
-
-  # Render a view
-  haml :index
 end
 
 

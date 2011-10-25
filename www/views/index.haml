@@ -14,26 +14,24 @@
         %img{:src => "/?action=snapshot"}
 
     #controls
-      %form#actionform{:method => "get", :name => "actionform"}
-        #controller
-          %input#action{:type => "hidden", :name => "action"}
-          %img{:src => "img/controller.jpg", :alt => "controller", :usemap => "#controllermap"}
-          %map{:name => "controllermap"}
-            %area.action{:shape => "rect", :coords => "140,0,300,140", :nohref => "nohref", :alt => "Forward", :title => "forward"}
-            %area.action{:shape => "rect", :coords => "300,140,440,300", :nohref => "nohref", :alt => "Right", :title => "right"}
-            %area.action{:shape => "rect", :coords => "140,300,300,440", :nohref => "nohref", :alt => "Reverse", :title => "reverse"}
-            %area.action{:shape => "rect", :coords => "0,140,140,300", :nohref => "nohref", :alt => "Left", :title => "left"}
-            %area.action{:shape => "rect", :coords => "140,140,300,300", :nohref => "nohref", :alt => "Fire!", :title => "fire"}
-            %area.action{:shape => "rect", :coords => "0,0,140,140", :nohref => "nohref", :alt => "Anti-Clockwise", :title => "anticlockwise"}
-            %area.action{:shape => "rect", :coords => "300,0,440,140", :nohref => "nohref", :alt => "Clockwise", :title => "clockwise"}
-            %area.action{:shape => "rect", :coords => "0,300,140,440", :nohref => "nohref", :alt => "Up", :title => "up"}
-            %area.action{:shape => "rect", :coords => "300,300,440,440", :nohref => "nohref", :alt => "Down", :title => "down"}
-            %area.action{:shape => "rect", :coords => "0,440,440,590", :nohref => "nohref", :alt => "Stop", :title => "stop"}
+      #controller
+        %img{:src => "img/controller.jpg", :alt => "controller", :usemap => "#controllermap"}
+        %map{:name => "controllermap"}
+          %area.action{:shape => "rect", :coords => "140,0,300,140", :nohref => "nohref", :alt => "Forward", :title => "forward"}
+          %area.action{:shape => "rect", :coords => "300,140,440,300", :nohref => "nohref", :alt => "Right", :title => "right"}
+          %area.action{:shape => "rect", :coords => "140,300,300,440", :nohref => "nohref", :alt => "Reverse", :title => "reverse"}
+          %area.action{:shape => "rect", :coords => "0,140,140,300", :nohref => "nohref", :alt => "Left", :title => "left"}
+          %area.action{:shape => "rect", :coords => "140,140,300,300", :nohref => "nohref", :alt => "Fire!", :title => "fire"}
+          %area.action{:shape => "rect", :coords => "0,0,140,140", :nohref => "nohref", :alt => "Anti-Clockwise", :title => "anticlockwise"}
+          %area.action{:shape => "rect", :coords => "300,0,440,140", :nohref => "nohref", :alt => "Clockwise", :title => "clockwise"}
+          %area.action{:shape => "rect", :coords => "0,300,140,440", :nohref => "nohref", :alt => "Up", :title => "up"}
+          %area.action{:shape => "rect", :coords => "300,300,440,440", :nohref => "nohref", :alt => "Down", :title => "down"}
+          %area.action{:shape => "rect", :coords => "0,440,440,590", :nohref => "nohref", :alt => "Stop", :title => "stop"}
 
-          %fieldset
-            %label{:for => "duration"}
-              Duration:
-              %input{:name => "duration", :value => "#{params["duration"]}"}
+        %fieldset
+          %label{:for => "duration"}
+            Duration:
+            %input#duration{:name => "duration", :value => "#{params["duration"]}"}
 
     %script{:type => "text/javascript", :src => "js/jquery.min.js"}
     %script{:type => "text/javascript", :src => "js/tank.js"}

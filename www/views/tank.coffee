@@ -1,4 +1,5 @@
 jQuery ->
   $(".action").click ->
-    $("#action").val(this.title)
-    $("#actionform").submit()
+    $.ajax '/'
+      type: 'POST'
+      data: "action=#{this.title}&duration=#{$('#duration').val()}"
