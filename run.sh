@@ -14,4 +14,4 @@
 #
 
 # Make foreman start all the necessary processes
-rvm exec bundle exec foreman start
+/usr/local/rvm/bin/rvm exec bundle exec foreman start
